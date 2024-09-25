@@ -1,0 +1,67 @@
+.container {
+    width: 50%;
+    margin: auto;
+}
+h2{
+    margin-top: -329px;
+    font-family: cursive;
+}
+form label {
+    font-family: cursive;
+}
+
+
+form {
+    margin-top: 20px;
+    margin-bottom: -737px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button[type="submit"] {
+    background-color: gold;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: cursive;
+}
+
+button[type="submit"]:hover {
+    background-color: goldenrod;
+}
+
+
+.btn_signup{
+    color: rgb(67, 65, 65);
+  background-color: gold;
+  font-family: cursive;
+  font-size: 19px;
+  border-bottom: 20px;
+  border-top: 20px;
+  border-left: 20px;
+  border-right: 20px;
+  border-radius: 5px;
+  margin-left: 884px;
+  margin-top: 0px;
+  position: absolute;
+  padding: 10px 20px 10px 20px;
+  cursor: pointer;
+}

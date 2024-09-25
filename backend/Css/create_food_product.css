@@ -1,0 +1,22 @@
+input{
+    padding: 10px;
+    margin-bottom: 5px;
+    width: 400px;
+    border-radius: 5px;
+}
+
+
+
+.content h2{
+    margin-top: 10px;
+    margin-left: 200px;
+}
+
+.content{
+    display: block;
+   
+}
+
+form{
+    margin-left: 200px;
+}

@@ -1,0 +1,211 @@
+body{
+    background-color: rgb(27, 218, 218);
+}
+
+.content{
+    height: 450px;
+  width: 1366px;
+  background-color: aliceblue;
+  position: absolute;
+  margin-top: 2px;
+  margin-left: 0px;
+ 
+  
+}
+
+.abt h2{
+  font-family: cursive;
+  margin-left: 150px;
+}
+
+.abt p{
+  margin-left: 150px; 
+  margin-right: 600px; 
+  font-family:cursive; 
+  font-size:17px;
+}
+
+.abt img{
+  position: absolute;
+  width: 300px;
+  margin-top: 70px;
+  margin-left: 900px;
+}
+
+.food h2{
+  margin-top: 50px;
+  text-align: center;
+  text-decoration:underline;
+}
+
+.location h2{
+  text-decoration: underline;
+  position: absolute;
+  margin-left: 800px;
+  margin-top: 900px;
+}
+
+.location p{
+  position: absolute;
+  margin-left: 800px;
+  margin-top: 940px;
+ width: 100px;
+}
+.location img{
+  width: 250px;
+  margin-top: 900px;
+  margin-left: 300px;
+  position: absolute;
+}
+
+/* Header */
+/* General Styles */
+.space {
+  margin-top: 65px;
+}
+
+.header {
+  height: 533px;
+  width: 100%;
+  max-width: 1358px;
+  margin: 0 auto; /* Centers the header */
+}
+
+.header a {
+  text-decoration: none;
+  color: rgb(67, 65, 65);
+  margin-left: 35px;
+  font-size: larger;
+  font-family: cursive;
+}
+
+/* Buttons */
+button {
+  cursor: pointer;
+  font-family: cursive;
+  font-size: 19px;
+  background-color: gold;
+  border-radius: 5px;
+  border: none;
+  padding: 10px 20px;
+}
+
+button:hover {
+  background-color: #d4af37; /* Darker gold on hover */
+}
+
+.btn_cart {
+  position: absolute;
+  margin-left: 562px;
+  background-color: gold;
+}
+
+.btn_shop {
+  margin-left: 595px;
+}
+
+.btn_login_User{
+  margin-left: 830px;
+  position: absolute;
+}
+
+.btn_login_Admin{
+  margin-left: 880px;
+  position: absolute;
+}
+
+
+.btn_signup,
+.btn_profile {
+  color: rgb(67, 65, 65);
+  background-color: gold;
+  font-family: cursive;
+  margin-left: 800px;
+  position: absolute;
+  width: 200px;
+  padding: 10px 20px;
+}
+
+.btn_login:hover {
+  background-color: #3e8e41;
+}
+
+/* Logo */
+.logo {
+  position: absolute;
+  margin-top: -727px;
+  margin-left: 464px;
+}
+
+/* Image Animation */
+.index_image img {
+  position: absolute;
+  margin-left: 300px;
+  margin-top: -450px;
+  transition: ease-in 5s;
+}
+
+.index_image {
+  position: relative;
+  animation: mymove 5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes mymove {
+  from {
+    left: -400px;
+  }
+  to {
+    left: 0px;
+  }
+}
+
+#div1 { animation-timing-function: linear; }
+#div2 { animation-timing-function: ease; }
+#div3 { animation-timing-function: ease-in; }
+#div4 { animation-timing-function: ease-out; }
+#div5 { animation-timing-function: ease-in-out; }
+
+
+
+/* Header */
+
+
+/* Footer */
+.footer_img{
+    z-index: 1200px;
+  position: absolute;
+  
+ 
+}
+
+.social_media{
+    z-index: 1000px;
+    margin-top: 1200px; 
+    margin-left: 1234px;
+    margin-bottom: 10px;
+    
+    
+}
+
+.Internallink{
+  margin-left: 1173px;
+}
+
+.Internallink a{
+  
+    text-decoration: none;
+    color: rgb(67, 65, 65);
+    
+    font-family: cursive;
+}
+
+.cart{
+  position: absolute;
+  z-index: 1000;
+}
+
+
+
+
+/* Footer */

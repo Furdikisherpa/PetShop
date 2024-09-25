@@ -1,0 +1,77 @@
+.container{
+    margin-top: -300px;
+    margin-left: 300px;
+    text-align: center;
+   margin-right: 300px; 
+   font-family: cursive;
+   margin-bottom: -300px;
+}
+
+.contact{
+    margin-right: 500px;
+    position: absolute;
+    margin-top: 100px;
+    margin-left: 50px;
+}
+
+.address{
+    margin-left: 100px;
+    position: absolute;
+}
+
+form{
+    margin-top: 400px;
+    position: absolute;
+    margin-left: 400px;
+ 
+}
+
+input{
+    padding: 10px;
+    margin-bottom: 5px;
+    width: 400px;
+    border-radius: 6px;
+    font-family: cursive;
+    background-color: rgb(27, 218, 218);
+    border-color: black;
+}
+
+textarea{
+    border-radius: 6px;
+    background-color: rgb(27, 218, 218);
+}
+
+placeholder{
+    color: black;
+}
+
+.submit{
+    background-color: gold;
+    margin-top: 4px;
+    width: 427px;
+}
+
+
+.content{
+    display: block;
+   
+}
+
+
+.arrow img{
+   position: absolute;
+   margin-top: 350px;
+   margin-left: -250px;
+}
+
+.icons img{
+    position: absolute;
+    margin-top: -400px;
+    margin-left: 600px;
+}
+
+.footer{
+    margin-top: -100px
+}
+
+

@@ -1,0 +1,30 @@
+.about_shop{
+    margin-top: -400px;
+    font-family: cursive;
+    margin-right: 200px;
+    margin-left: 100px;
+    text-align: justify;
+    position: absolute;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+a button{
+    background-color: gold;
+    /* width: 150px; */
+    height: 50px;
+    font-size: 19px;
+    cursor: pointer;
+}
+
+.icons img{
+    position: absolute;
+    margin-top: -450px;
+    margin-left: 320px;
+}
+
+.footer{
+    margin-top: -500px
+}
