@@ -2,20 +2,24 @@
 // Start or resume session
 session_start();
 
-//CHeck if user is logged in
-if(isset($_SESSION['admin_loggedin']) && $_SESSION['admin_loggedin'] === true){
-    // If logged in, unset or destry session variables
-    $_SESSION = array(); //Clear all session variables
-    session_destroy();//Destroy the session
+// Check if the user is logged in
+if (isset($_SESSION['admin_loggedin']) && $_SESSION['admin_loggedin'] === true) {
+    
+    // Unset all session variables
+    $_SESSION = array();
 
-    //Redirect to the home page or any other page after logout
+    // Destroy the session completely
+    session_destroy();
+    
+    // Remove session cookie to ensure session is logged out everywhere
+    setcookie(session_name(), '', time() - 3600, '/');
+
+    // Redirect to home page or login page after logout
     header("Location: ../index.php");
     exit();
 } else {
-    // If not logged in, do nothing
+    // If not logged in, redirect to the home page
     header("Location: ../index.php");
     exit();
 }
-
-
 ?>
