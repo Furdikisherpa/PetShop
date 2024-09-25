@@ -99,9 +99,6 @@ if ($searchQuery) {
         <?php endif; ?>
     </div>
 
-    <div class="footer">
-        <?php require_once "footer.php"; ?>
-    </div>
     
 </body>
 </html>

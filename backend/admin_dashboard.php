@@ -38,7 +38,7 @@ $result3 = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cute Dashboard</title>
+    <title>Dashboard</title>
     <link rel="stylesheet" href="Css/admin_dashboard.css"> <!-- Assuming you have a CSS file for styling -->
 </head>
 <body>

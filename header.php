@@ -12,7 +12,7 @@
         // If user is logged in, display "Profile" button
         echo '<a href="profile.php"><button class="btn_profile">Profile</button></a>';
     } else if (isset($_SESSION['admin_loggedin']) && $_SESSION['admin_loggedin'] === true) {
-        // Display admin-related links
+        // Display admin dashboard if loggedin
          header("Location: backend/admin_dashboard.php");
          exit();
     } 

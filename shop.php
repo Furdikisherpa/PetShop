@@ -50,10 +50,5 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <?php endforeach; ?>
     </div>
 
-
-    <div class="footer">
-    <?php require_once "footer.php" ?>
-    </div>
-    
 </body>
 </html>

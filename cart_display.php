@@ -76,7 +76,7 @@ $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <?php } ?>
                     </tbody>
                 </table>
-                <p>Total: <?php echo $total; ?></p>
+                <p>Total:  <?php echo $total; ?></p>
                 <?php $_SESSION['total'] = $total; ?>
                     <?php if( ($total >= 70) && isset($_SESSION['loggedin']) ){ ?>
                         <a href="checkout.php">
@@ -125,7 +125,7 @@ if ($orders) {
         echo "Product ID: " . $order['product_id'] . "<br>";
         echo "Product Name: " . $order['product_name'] . "<br>";
         echo "Quantity: " . $order['Quantity'] . "<br>";
-        echo "total: $" . $order['total'] . "<br>";
+        echo "total: Rs." . $order['total'] . "<br>";
         echo "Order Date: " . $order['order_date'] . "<br>";
         echo "Status: " ;
         if ($order['status']==1)

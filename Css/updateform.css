@@ -1,0 +1,58 @@
+/* Center the form on the page */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f7f7f7;
+    flex-direction: column;
+    margin-top: -400px;
+}
+
+.update-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+
+.update-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: cursive;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    font-family: cursive;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: cursive;
+}
+
+.btn-update {
+    width: 100%;
+    padding: 10px;
+    background-color: gold;
+    color: black;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-update:hover {
+    background-color: goldenrod;
+}

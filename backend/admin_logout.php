@@ -2,14 +2,20 @@
 // Start or resume session
 session_start();
 
-// Unset specific session variables related to admin authentication
-unset($_SESSION['admin_loggedin']);
-unset($_SESSION['admin_username']);
+//CHeck if user is logged in
+if(isset($_SESSION['admin_loggedin']) && $_SESSION['admin_loggedin'] === true){
+    // If logged in, unset or destry session variables
+    $_SESSION = array(); //Clear all session variables
+    session_destroy();//Destroy the session
 
-// Destroy the session completely
-session_destroy();
+    //Redirect to the home page or any other page after logout
+    header("Location: ../index.php");
+    exit();
+} else {
+    // If not logged in, do nothing
+    header("Location: ../index.php");
+    exit();
+}
 
-// Redirect the admin to the login page or any other desired page after logout
-header("Location: adminform.php"); // Update the location as needed
-exit();
+
 ?>

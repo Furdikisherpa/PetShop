@@ -9,19 +9,32 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     exit;
 }
 
-// If user is logged in, you can retrieve user details from the session or database
-// For demonstration purposes, let's assume we have some user details stored in session
+// Include the database connection file
+require_once "Database/connection.php";
 
 // User details stored in session
 $username = $_SESSION['username'];
-// $email = $_SESSION['email']; // Assuming you store email in session
 
-// Alternatively, you can retrieve user details from the database
-// Example: $username = fetch_username_from_database($_SESSION['userid']);
+// Fetch additional user details from the database
+$sql = "SELECT full_name, username, address, contact_no, email FROM registration WHERE username = :username";
+$stmt = $conn->prepare($sql);
+$stmt->bindParam(':username', $username);
+$stmt->execute();
+$userDetails = $stmt->fetch(PDO::FETCH_ASSOC);
 
-// You can also fetch and display more user information if needed
+// Check if user details were found
+if ($userDetails) {
+    $full_name = $userDetails['full_name'];
+    $address = $userDetails['address'];
+    $contact_no = $userDetails['contact_no'];
+    $email = $userDetails['email'];
+} else {
+    // Handle the case where user data is not found (optional)
+    $full_name = $address = $contact_no = $email = 'N/A';
+}
 
-// Display the user profile
+// Close the database connection
+$conn = null;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,13 +46,25 @@ $username = $_SESSION['username'];
     <link rel="stylesheet" href="Css/style.css">
 </head>
 <body>
-    <?php require_once "header.php" ?>
+    <?php require_once "header.php"; ?>
+    
     <div class="container">
-        <h2>User Profile</h2>
-        <p>Welcome, <?php echo $username; ?></p>
-        <a href="logout.php">Logout</a>
-        <!-- Display more user information here if needed -->
+        <div class="profile-card">
+            <h2>User Profile</h2>
+            <p>Welcome, <?php echo htmlspecialchars($full_name); ?>!</p>
+            
+            <!-- Display user details -->
+            <p><strong>Username:</strong> <?php echo htmlspecialchars($username); ?></p>
+            <p><strong>Email:</strong> <?php echo htmlspecialchars($email); ?></p>
+            <p><strong>Address:</strong> <?php echo htmlspecialchars($address); ?></p>
+            <p><strong>Contact No:</strong> <?php echo htmlspecialchars($contact_no); ?></p>
+
+            <!-- Logout and Update Buttons -->
+            <a href="logout.php" class="btn-logout">Logout</a>
+            <a href="updateform.php" class="btn-update">Update Profile</a> <!-- New update button -->
+        </div>
     </div>
-    <?php require_once "footer.php" ?>
 </body>
 </html>
+
+
