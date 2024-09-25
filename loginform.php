@@ -39,6 +39,5 @@ require_once "header.php"; // Move this after session check
     </form>
 </div>
 
-<?php require_once "footer.php"; ?>
 </body>
 </html>
