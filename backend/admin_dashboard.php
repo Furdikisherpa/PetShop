@@ -43,7 +43,7 @@ $result3 = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
     <?php require_once "dashboard_side.php" ?>
-    <div class="content">
+    <div class="heading">
         <!-- Main content of your dashboard page goes here -->
         <h1>Welcome to the Dashboard</h1>  
     </div>

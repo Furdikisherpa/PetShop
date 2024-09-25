@@ -4,7 +4,7 @@ body{
 
 .content{
     height: 450px;
-  width: 1366px;
+  width: 1349px;
   background-color: aliceblue;
   position: absolute;
   margin-top: 2px;
@@ -182,14 +182,14 @@ button:hover {
 .social_media{
     z-index: 1000px;
     margin-top: 1200px; 
-    margin-left: 1234px;
+    margin-left: 1220px;
     margin-bottom: 10px;
     
     
 }
 
 .Internallink{
-  margin-left: 1173px;
+  margin-left: 1153px;
 }
 
 .Internallink a{

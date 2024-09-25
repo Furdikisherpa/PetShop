@@ -64,14 +64,14 @@ body{
 }
 
 .container{
-    width: 1366px;
-    height: 1096px;
+    width: 1349px;
+    height: 850px;
     background-color: white;
     margin-left: -8px;
     margin-top: -400px;
     margin-right: 0;
     position: relative;
-    margin-bottom: -878px;
+    margin-bottom: -1178px;
 }
 
 .quantity{
