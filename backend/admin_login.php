@@ -29,12 +29,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit(); // Make sure to exit after redirecting
     } else {
         // If login fails, redirect back to the admin login page with an error message
-        header("Location: admin_login.php?error=1");
+        header("Location: adminform.php?error=1");
         exit();
     }
 } else {
     // If access method is not POST, redirect back to the admin login page
-    header("Location: admin_login.php");
+    header("Location: adminform.php");
     exit();
 }
 ?>

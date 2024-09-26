@@ -15,9 +15,9 @@
         <h2>CREATE FOOD PRODUCT</h2>
         <form action="add_food_data.php" method="post" enctype="multipart/form-data">
         <input type="text" placeholder="Food name" name="name" pattern="[A-Za-z\s]{1,50}"  title="Please enter a valid name (letters and spaces only)" required><br>
-    <input type="text" placeholder="Price" Min="1" name="price" pattern="[0-9]+" title="Please enter a valid price (numbers only)" required><br>
-    <input type="text" placeholder="Weight" Min="1" name="weight" pattern="[0-9]+" title="Please enter a valid weight (numbers only)" required><br>
-    <input type="text" placeholder="Quantity" Min="1" name="quantity" pattern="[0-9]+" title="Please enter a valid quantity (numbers only)" required><br>
+    <input type="text" placeholder="Price" Min="1" name="price" pattern="[1-9]+" title="Please enter a valid price (numbers only)" required><br>
+    <input type="text" placeholder="Weight" Min="1" name="weight" pattern="[1-9]+" title="Please enter a valid weight (numbers only)" required><br>
+    <input type="text" placeholder="Quantity" Min="1" name="quantity" pattern="[1-9]+" title="Please enter a valid quantity (numbers only)" required><br>
     <input type="text" placeholder="Details"  name="details" required><br>
     <input type="text" placeholder="Ingredients and Analysis"  name="ingredients" required><br>
     <input type="text" placeholder="Shipping & Returns" name="shipping" required><br>

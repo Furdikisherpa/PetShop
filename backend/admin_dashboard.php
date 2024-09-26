@@ -1,11 +1,10 @@
 <?php
 session_start(); // Start or resume session
 
-// Check if the admin is logged in, if not redirect to login page
-if (isset($_SESSION['admin_loggedin']) && $_SESSION['admin_loggedin'] === true) {
-    echo "Logged in as: " . $_SESSION['admin_username'];
-} else {
-    echo "Not logged in.";
+if (!isset($_SESSION['admin_loggedin']) || $_SESSION['admin_loggedin'] !== true) {
+    // If not logged in, redirect to login page
+    header("Location: ../index.php");
+    exit;
 }
 
 

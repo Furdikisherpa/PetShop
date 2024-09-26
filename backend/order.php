@@ -1,4 +1,13 @@
 <?php
+session_start(); // Start or resume session
+
+if (!isset($_SESSION['admin_loggedin']) || $_SESSION['admin_loggedin'] !== true) {
+    // If not logged in, redirect to login page
+    header("Location: ../index.php");
+    exit;
+}
+
+
 require_once "../Database/connection.php";
 
 // Function to return the status as "Pending" or "Delivered"

@@ -34,7 +34,7 @@
         </div>
         <div class="form-group">
             <label for="address">Address:</label>
-            <input type="text" id="address" name="address" pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s'-]+" placeholder="Please enter your Address" required>
+            <input type="text" id="address" name="address" pattern="[A-Za-z\s]{1,50}" placeholder="Please enter your Address" required>
         </div>
         <div class="form-group">
             <label for="contact_no">Contact No:</label>

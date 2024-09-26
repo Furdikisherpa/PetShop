@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 09, 2024 at 05:45 AM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.1.17
+-- Generation Time: Sep 26, 2024 at 05:54 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -127,7 +127,7 @@ CREATE TABLE `orders` (
   `total` varchar(100) NOT NULL,
   `Quantity` int(11) NOT NULL,
   `status` int(11) DEFAULT NULL,
-  `order_date` int(11) NOT NULL DEFAULT current_timestamp()
+  `order_date` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -135,13 +135,19 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`order_id`, `cid`, `product_id`, `product_name`, `total`, `Quantity`, `status`, `order_date`) VALUES
-(42, 5, 6, 'API® Bettafix Freshwater Fish Bacterial Infection Treatment', '250', 0, 1, 2147483647),
-(43, 2, 3, ' ACANA Singles Grain Free Limited Ingredient Diet Duck and Pear Formula Dog Treats', '700', 0, 1, 2147483647),
-(44, 2, 6, 'API® Bettafix Freshwater Fish Bacterial Infection Treatment', '250', 1, 1, 2147483647),
-(45, 2, 3, ' ACANA Singles Grain Free Limited Ingredient Diet Duck and Pear Formula Dog Treats', '700', 3, 1, 2147483647),
-(46, 2, 3, ' ACANA Singles Grain Free Limited Ingredient Diet Duck and Pear Formula Dog Treats', '950', 1, 1, 2147483647),
-(47, 2, 6, 'API® Bettafix Freshwater Fish Bacterial Infection Treatment', '950', 1, 1, 2147483647),
-(48, 2, 6, 'API® Bettafix Freshwater Fish Bacterial Infection Treatment', '1000', 4, 1, 2147483647);
+(42, 5, 6, 'API® Bettafix Freshwater Fish Bacterial Infection Treatment', '250', 0, 1, '0000-00-00'),
+(43, 2, 3, ' ACANA Singles Grain Free Limited Ingredient Diet Duck and Pear Formula Dog Treats', '700', 0, 1, '0000-00-00'),
+(44, 2, 6, 'API® Bettafix Freshwater Fish Bacterial Infection Treatment', '250', 1, 1, '0000-00-00'),
+(45, 2, 3, ' ACANA Singles Grain Free Limited Ingredient Diet Duck and Pear Formula Dog Treats', '700', 3, 1, '0000-00-00'),
+(46, 2, 3, ' ACANA Singles Grain Free Limited Ingredient Diet Duck and Pear Formula Dog Treats', '950', 1, 1, '0000-00-00'),
+(47, 2, 6, 'API® Bettafix Freshwater Fish Bacterial Infection Treatment', '950', 1, 1, '0000-00-00'),
+(48, 2, 6, 'API® Bettafix Freshwater Fish Bacterial Infection Treatment', '1000', 4, 1, '0000-00-00'),
+(49, 5, 7, 'API® Guide Fish Problem Solving General Cure', '899', 1, 1, '0000-00-00'),
+(50, 5, 3, ' ACANA Singles Grain Free Limited Ingredient Diet Duck and Pear Formula Dog Treats', '2100', 3, 1, '2024-09-22'),
+(51, 10, 3, ' ACANA Singles Grain Free Limited Ingredient Diet Duck and Pear Formula Dog Treats', '1400', 2, 1, '2024-09-24'),
+(52, 10, 6, 'API® Bettafix Freshwater Fish Bacterial Infection Treatment', '250', 1, 1, '2024-09-25'),
+(53, 10, 6, 'API® Bettafix Freshwater Fish Bacterial Infection Treatment', '250', 1, 1, '2024-09-25'),
+(54, 10, 10, 'xvdfv', '5000', 1, 1, '2024-09-25');
 
 -- --------------------------------------------------------
 
@@ -168,7 +174,10 @@ INSERT INTO `registration` (`cid`, `full_name`, `username`, `address`, `contact_
 (3, 'saugat', 'saugat123', NULL, '', 'saugat@gmail.com', 'saugat123'),
 (4, 'Tenzy sherpa', 'tenz123', NULL, '', 'tenzy@gmail.com', 'tenzy123'),
 (5, 'tenzy', 'tenzy123', NULL, '', 'tenzy@gmail.com', 'tenzy123'),
-(8, 'Soniya Tamang', 'Soniya', 'Kapan', '9856787534', 'soniya1@gmail.com', 'sonIYA!@#$6');
+(8, 'Soniya Tamang', 'Soniya', 'Kapan', '9856787534', 'soniya1@gmail.com', 'sonIYA!@#$6'),
+(9, 'sdfsd', 'dfs', 'sdfs', '9867587422', 'dsf@gmail.com', '$2y$10$IUWgBaJi9heaOltTvLdZ5ehhlsgOM5gzjlmNtolCArTwyfeJtKA6y'),
+(10, 'Geli Sherpa', 'geli', 'Budanilkantha', '9876545675', 'geli@gmail.com', '$2y$10$qRn3ilYxQQ6Tm.dmKJxkBOOAdTKUXHdG0MH6yK1DMUorxRlywprZC'),
+(11, 'Nemo Tamang', 'nemo', 'gokarna', '9876545768', 'nemo@gmail.com', '$2y$10$6.7nD8qcMuLuSOUySwmX9epFJQH6A//2cPOubdN4iF50yqePQbqPO');
 
 --
 -- Indexes for dumped tables
@@ -196,7 +205,8 @@ ALTER TABLE `food`
 -- Indexes for table `orders`
 --
 ALTER TABLE `orders`
-  ADD PRIMARY KEY (`order_id`);
+  ADD PRIMARY KEY (`order_id`),
+  ADD KEY `fk_orders_registration` (`cid`);
 
 --
 -- Indexes for table `registration`
@@ -224,19 +234,29 @@ ALTER TABLE `feedback`
 -- AUTO_INCREMENT for table `food`
 --
 ALTER TABLE `food`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT for table `registration`
 --
 ALTER TABLE `registration`
-  MODIFY `cid` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `cid` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `orders`
+--
+ALTER TABLE `orders`
+  ADD CONSTRAINT `fk_orders_registration` FOREIGN KEY (`cid`) REFERENCES `registration` (`cid`) ON DELETE SET NULL ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

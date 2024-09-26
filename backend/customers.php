@@ -1,4 +1,13 @@
 <?php
+session_start(); // Start or resume session
+
+if (!isset($_SESSION['admin_loggedin']) || $_SESSION['admin_loggedin'] !== true) {
+    // If not logged in, redirect to login page
+    header("Location: ../index.php");
+    exit;
+}
+
+
 require_once "../Database/connection.php";
 $query = "SELECT * FROM registration";
 $stmt = $conn->prepare($query);
@@ -51,7 +60,6 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <th>Address</th>
                 <th>Contact_no</th>
                 <th>Email</th>
-                <th>Action</th>
             </tr>
             </thead>
             <tbody>
@@ -74,12 +82,6 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     </td>
                     <td>
                         <?php echo $single["email"]; ?>
-                    </td>
-                    <td id="form_action">
-                        <form action="customer_delete.php" method="post">
-                            <input type="hidden" name="deleteid" value="<?php echo $single["cid"]; ?>">
-                            <input type="submit" value="Delete" id="delete">
-                        </form>
                     </td>
                 </tr>
                 
